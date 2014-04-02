@@ -2,6 +2,10 @@
  * @author simo
  */
 
+Node = function() {
+    var item,
+        next;
+};
 
 (function (global) {
 
@@ -12,12 +16,32 @@
 
         var
             START_ROW = 0,
+            item,
+            next,
+
+            first = null,
 
 
-            push = function (startCell, stopCell) {
 
+
+
+            push = function (item) {
+
+                var oldFirst = first;
+                first = new Node();
+                first.item = item;
+                first.next = oldFirst;
 
             },
+
+            pop = function (item) {
+
+                item = first.item;
+                first = first.next;
+                return item;
+
+            },
+
 
 
 
@@ -35,6 +59,8 @@
 
         // define public interface
         return {
+            push : push,
+            pop : pop,
             last : last
         };
 
