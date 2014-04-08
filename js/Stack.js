@@ -3,8 +3,8 @@
  */
 
 Node = function() {
-    var item,
-        next;
+    var item, // string
+        next; // Node
 };
 
 (function (global) {
@@ -20,9 +20,6 @@ Node = function() {
             next,
 
             first = null,
-
-
-
 
 
             push = function (item) {
